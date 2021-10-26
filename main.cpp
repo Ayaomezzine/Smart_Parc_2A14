@@ -1,1 +1,2 @@
 cout<<hii; 
+cout <<"okay ";
