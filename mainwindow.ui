@@ -27,11 +27,11 @@
      <enum>QTabWidget::Triangular</enum>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>3</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
-      <string>Ajouter Client</string>
+      <string>Ajouter Candidat</string>
      </attribute>
      <widget class="QLabel" name="label">
       <property name="geometry">
@@ -187,7 +187,7 @@
     </widget>
     <widget class="QWidget" name="tab_2">
      <attribute name="title">
-      <string>Afficher Client</string>
+      <string>Afficher Candidat</string>
      </attribute>
      <widget class="QTableView" name="tab_candidat">
       <property name="geometry">
@@ -251,12 +251,12 @@
     </widget>
     <widget class="QWidget" name="tab_3">
      <attribute name="title">
-      <string>Supprimer Client</string>
+      <string>Supprimer Candidat</string>
      </attribute>
     </widget>
     <widget class="QWidget" name="tab_4">
      <attribute name="title">
-      <string>Modifier Client</string>
+      <string>Modifier Candidat </string>
      </attribute>
     </widget>
    </widget>
