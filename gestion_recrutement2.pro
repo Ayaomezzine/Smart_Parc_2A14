@@ -7,7 +7,8 @@ CONFIG +=console
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 CONFIG += c++11
-
+TARGET = LoginApp
+TEMPLATE = app
 
 # The following define makes your compiler emit warnings if you use
 # any Qt feature that has been marked deprecated (the exact warnings
@@ -24,17 +25,40 @@ SOURCES += \
     candidats.cpp \
     connection.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    valider.cpp
 
 HEADERS += \
     candidats.h \
     connection.h \
-    mainwindow.h
+    mainwindow.h \
+    valider.h
 
 FORMS += \
     mainwindow.ui
+DISTFILES += \
+    Historique
+
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    Traduction.qrc
+
+qtPrepareTool(LRELEASE, lrelease)
+ for(tsfile, TRANSLATIONS) {
+     qmfile = $$shadowed($$tsfile)
+     qmfile ~= s,\\.ts$,.qm,
+     qmdir = $$dirname(qmfile)
+     !exists($$qmdir) {
+         mkpath($$qmdir)|error("Aborting.")
+     }
+     command = $$LRELEASE -removeidentical $$tsfile -qm  $$qmfile
+     system($$command)|error("Failed to run: $$command")
+     TRANSLATIONS_FILES += $$qmfile
+ }
+
+

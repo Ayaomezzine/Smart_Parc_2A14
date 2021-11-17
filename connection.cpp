@@ -1,5 +1,6 @@
 #include "connection.h"
 #include<QDebug>
+#include <QInputDialog>
 Connection::Connection()
 {
 
